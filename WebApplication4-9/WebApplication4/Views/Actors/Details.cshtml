@@ -1,0 +1,44 @@
+﻿@model WebApplication4.Models.Actors
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var ActorsRelated = (IEnumerable<WebApplication4.Models.Actors>)ViewBag.ActorRelated;
+
+}
+
+<h2>Actor's Details</h2>
+<hr />
+<div class="container center-block">
+
+    <div class="col-md-4 thumbnail center-block " style="border: 1px solid #ff9800;width:300px;height:380px;margin-left:40px">
+        <a href="../Details/@Model.Id"><img class="img-rounded" style="height:280px;width:300px" src="~/ImageActors/@Model.Image" alt="Alternate Text" /></a>
+        <a href="../Details/@Model.Id"> <h3>Actor's Name: @Model.Name</h3></a>
+    </div>
+</div>
+<hr />
+@if (ViewBag.ConnectionDataBase)
+{
+    <b style="font-size:xx-large;color:red;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Service-Who are actor’s friends:</b>
+    <hr />
+    @*foreach (var subitem in ActorsRelated)
+        {
+            <div class="col-md-4 thumbnail ">
+                <a href="../Details/@subitem.Id"><img style="height:280px;width:240px" src="~/ImageActors/@subitem.Image" alt="Alternate Text" /></a>
+                <a href="../Details/@subitem.Id"> <h3>Name Film: @subitem.Name</h3></a>
+                <p><a class="btn btn-success" href="../Details/@subitem.Id">Learn more &raquo;</a></p>
+            </div>
+
+        }*@
+    int i = 0;
+
+    foreach (var item in ViewBag.listofNameActorsRelated)
+    {
+
+        <div style="width:360px ;padding-left:10px;margin-bottom:2px;background-color:bisque"><b style="font-size:xx-large">@(++i) - @item</b></div>
+    }
+
+}

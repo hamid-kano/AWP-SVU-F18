@@ -1,0 +1,66 @@
+﻿@model IEnumerable<WebApplication4.Models.Profits>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Report Profits</h2>
+
+<table class="table table-hover table-bordered" >
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NameUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MovieID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MovieName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateTimeDownload)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PriceMovie)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.NameUser)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MovieID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MovieName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DateTimeDownload)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PriceMovie)
+    </td>
+    @if (User.Identity.Name.Equals("Hamid"))
+    {
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+        </td>
+    }
+
+</tr>
+    }
+</table>
+<hr />
+@{  var sum = 0;}
+<b style="font-size:large">Sum Profits: </b>@foreach (var item in Model)
+{
+    sum = sum + item.PriceMovie;
+}
+<b style="font-size:large;color:red">  @sum.ToString()</b>

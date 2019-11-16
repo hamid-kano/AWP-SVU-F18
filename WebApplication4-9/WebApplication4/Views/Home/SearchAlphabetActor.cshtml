@@ -1,0 +1,27 @@
+﻿@model IEnumerable<WebApplication4.Models.Actors>
+
+@{
+    ViewBag.Title = "SearchAlphabetActor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search Alphabet Actor</h2>
+
+<div class="row">
+    @foreach (var subitem in Model)
+    {
+        <div class="col-md-4 thumbnail ">
+            <a href="../Actors/Details/@subitem.Id"><img style="height:280px;width:240px" src="~/ImageActors/@subitem.Image" alt="Alternate Text" /></a>
+            <a href="../Actors/Details/@subitem.Id"> <h4>Name Actor: @Html.DisplayFor(model => subitem.Name)</h4></a>
+
+            <p><a class="btn btn-default" href="../Actors/Details/@subitem.Id">Learn more &raquo;</a></p>
+        </div>
+
+    }
+    @if (Model.Count() == 0)
+    {
+        <h3>Not found resutl</h3>
+    }
+
+</div>
+

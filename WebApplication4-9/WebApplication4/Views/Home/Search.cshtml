@@ -1,0 +1,29 @@
+﻿@model IEnumerable<WebApplication4.Models.Movie>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search</h2>
+
+    <div>
+        <h1 class="page-heading"> نتائج البحث</h1>
+
+        <div class="row">
+            @foreach (var subitem in Model)
+            {
+                <div class="col-md-4 thumbnail ">
+                    <a href="../Movies/Details/@subitem.ID"><img style="height:280px;width:240px" src="~/Image/@subitem.Image" alt="Alternate Text" /></a>
+                    <a href="../Movies/Details/@subitem.ID"> <h3>Name Film: @Html.DisplayFor(model => subitem.Name)</h3></a>
+                    <h4>Sight Film: @Html.DisplayFor(model => subitem.Sight)</h4>
+                    <h5>Director Film: @Html.DisplayFor(model => subitem.Director.Name)</h5>
+
+                    <p><a class="btn btn-default" href="../Movies/Details/@subitem.ID">Learn more &raquo;</a></p>
+                </div>
+
+            }
+        </div>
+        <hr />
+    </div>
+

@@ -1,0 +1,473 @@
+﻿@model WebApplication4.Models.EditRegisterViewModel
+
+@{
+    ViewBag.Title = "EditRegister";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>Edit login information</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    @*<h4>EditRegisterViewModel</h4>*@
+    <div>
+        <h3>@ViewBag.Messege</h3>
+    </div>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.id)
+
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.Credit_ID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Credit_ID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Credit_ID, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CurrentPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CurrentPassword, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CurrentPassword, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NewPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NewPassword, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NewPassword, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.ConfirmNewPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ConfirmNewPassword, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ConfirmNewPassword, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Age, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Age, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.EducationLevel, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @{
+                var EducationLevel = Server.MapPath("~/Data/Education Level.csv");
+                List<SelectListItem> ListEducationLevel = new List<SelectListItem>();
+                if (System.IO.File.Exists(EducationLevel))
+                {
+                    string[] lines = System.IO.File.ReadAllLines(EducationLevel);
+                    foreach (string line in lines)
+                    {
+                        ListEducationLevel.Add(new SelectListItem { Text = line });
+                    }
+                }
+                @Html.DropDownListFor(m => m.EducationLevel, ListEducationLevel, new { @class = "form-control" });
+                @Html.ValidationMessageFor(model => model.EducationLevel, "", new { @class = "text-danger" });
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Gender, "Gender", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @{
+                var Gender = Server.MapPath("~/Data/Gender.csv");
+                List<SelectListItem> ListGender = new List<SelectListItem>();
+                if (System.IO.File.Exists(Gender))
+                {
+                    string[] lines = System.IO.File.ReadAllLines(Gender);
+                    foreach (string line in lines)
+                    {
+                        ListGender.Add(new SelectListItem { Text = line });
+                    }
+                }
+                @Html.DropDownListFor(m => m.Gender, ListGender, new { @class = "form-control" });
+                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" });
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.HomeOwnerShaip, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @{
+                var HomeOwnerShaip = Server.MapPath("~/Data/Home Ownership.csv");
+                List<SelectListItem> ListHomeOwnerShaip = new List<SelectListItem>();
+                if (System.IO.File.Exists(HomeOwnerShaip))
+                {
+                    string[] lines = System.IO.File.ReadAllLines(HomeOwnerShaip);
+                    foreach (string line in lines)
+                    {
+                        ListHomeOwnerShaip.Add(new SelectListItem { Text = line });
+                    }
+                }
+                @Html.DropDownListFor(m => m.HomeOwnerShaip, ListHomeOwnerShaip, new { @class = "form-control" });
+                @Html.ValidationMessageFor(model => model.HomeOwnerShaip, "", new { @class = "text-danger" });
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.MaritalStatus, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @{
+                var MaritalStatus = Server.MapPath("~/Data/Marital Status.csv");
+                List<SelectListItem> ListMaritalStatus = new List<SelectListItem>();
+                if (System.IO.File.Exists(MaritalStatus))
+                {
+                    string[] lines = System.IO.File.ReadAllLines(MaritalStatus);
+                    foreach (string line in lines)
+                    {
+                        ListMaritalStatus.Add(new SelectListItem { Text = line });
+                    }
+                }
+                @Html.DropDownListFor(m => m.MaritalStatus, ListMaritalStatus, new { @class = "form-control" });
+                @Html.ValidationMessageFor(model => model.MaritalStatus, "", new { @class = "text-danger" });
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.NumCars, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.NumCars, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.NumChildren, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.NumChildren, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Channel, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @{
+                var Channel = Server.MapPath("~/Data/Channel.csv");
+                List<SelectListItem> ListChannel = new List<SelectListItem>();
+                if (System.IO.File.Exists(Channel))
+                {
+                    string[] lines = System.IO.File.ReadAllLines(Channel);
+                    foreach (string line in lines)
+                    {
+                        ListChannel.Add(new SelectListItem { Text = line });
+                    }
+                }
+                @Html.ListBoxFor(m => m.Channel, ListChannel, new { @class = "form-control" });
+                @Html.ValidationMessageFor(model => model.Channel, "", new { @class = "text-danger" });
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Criteria, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @{
+                var Criteria = Server.MapPath("~/Data/Criteria.csv");
+                List<SelectListItem> ListCriteria = new List<SelectListItem>();
+                if (System.IO.File.Exists(Criteria))
+                {
+                    string[] lines = System.IO.File.ReadAllLines(Criteria);
+                    foreach (string line in lines)
+                    {
+                        ListCriteria.Add(new SelectListItem { Text = line });
+                    }
+                }
+                @Html.ListBoxFor(m => m.Criteria, ListCriteria, new { @class = "form-control" });
+                @Html.ValidationMessageFor(model => model.Criteria, "", new { @class = "text-danger" });
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Hobbies, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @{
+                var Hobbies = Server.MapPath("~/Data/Hobbies.csv");
+                List<SelectListItem> ListHobbies = new List<SelectListItem>();
+                if (System.IO.File.Exists(Hobbies))
+                {
+                    string[] lines = System.IO.File.ReadAllLines(Hobbies);
+                    foreach (string line in lines)
+                    {
+                        ListHobbies.Add(new SelectListItem { Text = line });
+                    }
+                }
+                @Html.ListBoxFor(m => m.Hobbies, ListHobbies, new { @class = "form-control" });
+                @Html.ValidationMessageFor(model => model.Hobbies, "", new { @class = "text-danger" });
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Technology, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @{
+                var Technology = Server.MapPath("~/Data/Technology.csv");
+                List<SelectListItem> ListTechnology = new List<SelectListItem>();
+                if (System.IO.File.Exists(Technology))
+                {
+                    string[] lines = System.IO.File.ReadAllLines(Technology);
+                    foreach (string line in lines)
+                    {
+                        ListTechnology.Add(new SelectListItem { Text = line });
+                    }
+                }
+                @Html.ListBoxFor(m => m.Technology, ListTechnology, new { @class = "form-control" });
+                @Html.ValidationMessageFor(model => model.Technology, "", new { @class = "text-danger" });
+            }
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.InternetConnections, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @{
+                var InternetConnections = Server.MapPath("~/Data/Internet Connection.csv");
+                List<SelectListItem> ListInternetConnections = new List<SelectListItem>();
+                if (System.IO.File.Exists(EducationLevel))
+                {
+                    string[] lines = System.IO.File.ReadAllLines(InternetConnections);
+                    foreach (string line in lines)
+                    {
+                        ListInternetConnections.Add(new SelectListItem { Text = line });
+                    }
+                }
+                @Html.DropDownListFor(m => m.InternetConnections, ListInternetConnections, new { @class = "form-control" });
+                @Html.ValidationMessageFor(model => model.InternetConnections, "", new { @class = "text-danger" });
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.MovieSelector, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @{
+                var MovieSelector = Server.MapPath("~/Data/Movie Selector.csv");
+                List<SelectListItem> ListMovieSelector = new List<SelectListItem>();
+                if (System.IO.File.Exists(MovieSelector))
+                {
+                    string[] lines = System.IO.File.ReadAllLines(MovieSelector);
+                    foreach (string line in lines)
+                    {
+                        ListMovieSelector.Add(new SelectListItem { Text = line });
+                    }
+                }
+                @Html.DropDownListFor(m => m.MovieSelector, ListMovieSelector, new { @class = "form-control" });
+                @Html.ValidationMessageFor(model => model.MovieSelector, "", new { @class = "text-danger" });
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.NumBathrooms, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.NumBathrooms, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.NumBedrooms, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.NumBedrooms, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.NumTVs, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.NumTVs, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.PPV_Freq, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @{
+                var PPV_Freq = Server.MapPath("~/Data/Freq.csv");
+                List<SelectListItem> ListPPV_Freq = new List<SelectListItem>();
+                if (System.IO.File.Exists(PPV_Freq))
+                {
+                    string[] lines = System.IO.File.ReadAllLines(PPV_Freq);
+                    foreach (string line in lines)
+                    {
+                        ListPPV_Freq.Add(new SelectListItem { Text = line });
+                    }
+                }
+                @Html.DropDownListFor(m => m.PPV_Freq, ListPPV_Freq, new { @class = "form-control" });
+                @Html.ValidationMessageFor(model => model.PPV_Freq, "", new { @class = "text-danger" });
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Buying_Freq, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @{
+                var Buying_Freq = Server.MapPath("~/Data/Freq.csv");
+                List<SelectListItem> ListBuying_Freq = new List<SelectListItem>();
+                if (System.IO.File.Exists(Buying_Freq))
+                {
+                    string[] lines = System.IO.File.ReadAllLines(Buying_Freq);
+                    foreach (string line in lines)
+                    {
+                        ListBuying_Freq.Add(new SelectListItem { Text = line });
+                    }
+                }
+                @Html.DropDownListFor(m => m.Buying_Freq, ListBuying_Freq, new { @class = "form-control" });
+                @Html.ValidationMessageFor(model => model.Buying_Freq, "", new { @class = "text-danger" });
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Format, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @{
+                var Format = Server.MapPath("~/Data/Format.csv");
+                List<SelectListItem> ListFormat = new List<SelectListItem>();
+                if (System.IO.File.Exists(Format))
+                {
+                    string[] lines = System.IO.File.ReadAllLines(Format);
+                    foreach (string line in lines)
+                    {
+                        ListFormat.Add(new SelectListItem { Text = line });
+                    }
+                }
+                @Html.DropDownListFor(m => m.Format, ListFormat, new { @class = "form-control" });
+                @Html.ValidationMessageFor(model => model.Format, "", new { @class = "text-danger" });
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.RentingFreq, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @{
+                var RentingFreq = Server.MapPath("~/Data/Freq.csv");
+                List<SelectListItem> ListRentingFreq = new List<SelectListItem>();
+                if (System.IO.File.Exists(RentingFreq))
+                {
+                    string[] lines = System.IO.File.ReadAllLines(RentingFreq);
+                    foreach (string line in lines)
+                    {
+                        ListRentingFreq.Add(new SelectListItem { Text = line });
+                    }
+                }
+                @Html.DropDownListFor(m => m.RentingFreq, ListRentingFreq, new { @class = "form-control" });
+                @Html.ValidationMessageFor(model => model.RentingFreq, "", new { @class = "text-danger" });
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ViewigFreq, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @{
+                var ViewigFreq = Server.MapPath("~/Data/Freq.csv");
+                List<SelectListItem> ListViewigFreq = new List<SelectListItem>();
+                if (System.IO.File.Exists(ViewigFreq))
+                {
+                    string[] lines = System.IO.File.ReadAllLines(ViewigFreq);
+                    foreach (string line in lines)
+                    {
+                        ListViewigFreq.Add(new SelectListItem { Text = line });
+                    }
+                }
+                @Html.DropDownListFor(m => m.ViewigFreq, ListViewigFreq, new { @class = "form-control" });
+                @Html.ValidationMessageFor(model => model.ViewigFreq, "", new { @class = "text-danger" });
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.TheaterFreq, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @{
+                var TheaterFreq = Server.MapPath("~/Data/Freq.csv");
+                List<SelectListItem> ListTheaterFreq = new List<SelectListItem>();
+                if (System.IO.File.Exists(TheaterFreq))
+                {
+                    string[] lines = System.IO.File.ReadAllLines(TheaterFreq);
+                    foreach (string line in lines)
+                    {
+                        ListTheaterFreq.Add(new SelectListItem { Text = line });
+                    }
+                }
+                @Html.DropDownListFor(m => m.TheaterFreq, ListTheaterFreq, new { @class = "form-control" });
+                @Html.ValidationMessageFor(model => model.TheaterFreq, "", new { @class = "text-danger" });
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.TV_MovieFreq, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @{
+                var TV_MovieFreq = Server.MapPath("~/Data/Freq.csv");
+                List<SelectListItem> ListTV_MovieFreq = new List<SelectListItem>();
+                if (System.IO.File.Exists(TV_MovieFreq))
+                {
+                    string[] lines = System.IO.File.ReadAllLines(TV_MovieFreq);
+                    foreach (string line in lines)
+                    {
+                        ListTV_MovieFreq.Add(new SelectListItem { Text = line });
+                    }
+                }
+                @Html.DropDownListFor(m => m.TV_MovieFreq, ListTV_MovieFreq, new { @class = "form-control" });
+                @Html.ValidationMessageFor(model => model.TV_MovieFreq, "", new { @class = "text-danger" });
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.TV_Signal, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @{
+                var TV_Signal = Server.MapPath("~/Data/TV Signal.csv");
+                List<SelectListItem> ListTV_Signal = new List<SelectListItem>();
+                if (System.IO.File.Exists(TV_Signal))
+                {
+                    string[] lines = System.IO.File.ReadAllLines(TV_Signal);
+                    foreach (string line in lines)
+                    {
+                        ListTV_Signal.Add(new SelectListItem { Text = line });
+                    }
+                }
+                @Html.DropDownListFor(m => m.TV_Signal, ListTV_Signal, new { @class = "form-control" });
+                @Html.ValidationMessageFor(model => model.TV_Signal, "", new { @class = "text-danger" });
+            }
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+

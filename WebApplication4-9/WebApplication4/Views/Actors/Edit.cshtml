@@ -1,0 +1,63 @@
+﻿@model WebApplication4.Models.Actors
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm("Edit", "Actors", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Actors</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @{
+                var Name = Server.MapPath("~/Data/Actors.csv");
+                List<SelectListItem> ListName = new List<SelectListItem>();
+                if (System.IO.File.Exists(Name))
+                {
+                    string[] lines = System.IO.File.ReadAllLines(Name);
+                    foreach (string line in lines)
+                    {
+                        ListName.Add(new SelectListItem { Text = line });
+                    }
+                }
+                @Html.DropDownListFor(m => m.Name, ListName, new { @class = "form-control" });
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" });
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" name="UploadImage" />
+            @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

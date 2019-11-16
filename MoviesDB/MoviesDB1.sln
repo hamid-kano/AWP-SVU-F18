@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "MoviesDB1", "MoviesDB\MoviesDB1.dwproj", "{22E79F36-8B9B-4D2A-9F60-3ED39E82362D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22E79F36-8B9B-4D2A-9F60-3ED39E82362D}.Development|Default.ActiveCfg = Development
+		{22E79F36-8B9B-4D2A-9F60-3ED39E82362D}.Development|Default.Build.0 = Development
+		{22E79F36-8B9B-4D2A-9F60-3ED39E82362D}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E131F8B9-7F15-4883-BF90-7AA0C2CCB96F}
+	EndGlobalSection
+EndGlobal

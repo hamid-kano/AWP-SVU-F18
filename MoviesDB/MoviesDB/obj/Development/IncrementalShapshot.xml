@@ -1,0 +1,124 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>MoviesDB</Database>
+    <Server>ABOREDA</Server>
+    <ConnectionString>Data Source=ABOREDA;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>svDUUz4owmhTyaQ54Vher7ANz8s=25/09/40 11:52:34 م25/09/40 11:52:34 م</TimeStamp>
+        <ID>
+          <String>MovieDMDS</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>WNYEJRlJ6+MD9JDxNEnEFTXzYWs=27/09/40 02:28:58 م25/09/40 11:53:01 م</TimeStamp>
+        <ID>
+          <String>MovieDMDSV</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>2wUiSPaoAONU2wJ8nKQJNfouB80=27/09/40 02:59:25 م27/09/40 02:57:57 م</TimeStamp>
+        <ID>
+          <String>MovieDMDSAssociation</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>9rLuyBMdu/GTnVwkDvQMx/J5EwU=29/09/40 11:46:01 م29/09/40 11:42:04 م</TimeStamp>
+        <ID>
+          <String>MovieDMDSAssociationActors</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>qp3bQBd/9c+EehANcOQiq7t/eBk=03/10/40 02:46:21 ص03/10/40 02:46:21 ص</TimeStamp>
+        <ID>
+          <String>MovieDMDSVClustering</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>h57ZraqnpmkQN1fZZ1+J41zw2y0=04/10/40 04:07:08 ص04/10/40 04:06:50 ص</TimeStamp>
+        <ID>
+          <String>Classification</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>Web8UQD6FCd+wjY5yDE0vxDqCAc=04/10/40 03:41:58 م04/10/40 03:41:56 م</TimeStamp>
+        <ID>
+          <String>ViewClusteringDSV</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>Gjy9xoK0H+zVzIa7xPLyMmIo2B4=26/09/40 12:26:25 ص25/09/40 11:54:33 م</TimeStamp>
+        <ID>
+          <String>CustomersClassification</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>yaTJPf/EopMeJYwXAcb4sZst6q0=27/09/40 03:01:45 م27/09/40 03:01:25 م</TimeStamp>
+        <ID>
+          <String>CustomersMSAssociation</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>wdeoSufdqLwJBwM8BkhAXgdOdfI=03/10/40 02:21:50 ص29/09/40 11:46:01 م</TimeStamp>
+        <ID>
+          <String>CustomersMSAssociationActors</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>Vcof6QQ3GlfQmep7Hbf5vsp1cUE=03/10/40 07:15:20 م03/10/40 02:47:44 ص</TimeStamp>
+        <ID>
+          <String>ViewClusteringMS</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>nY74HiqamTXt/flN7fkfi2mksw0=04/10/40 05:27:31 ص04/10/40 04:09:43 ص</TimeStamp>
+        <ID>
+          <String>ClassificationMS</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>FnHq5qC+UJY9vRz5ErNHLHrlzPg=04/10/40 07:42:33 م04/10/40 07:41:03 م</TimeStamp>
+        <ID>
+          <String>_ViewClusteringMS</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>3Zloj4M/5usmP7Yy9azjOsDTpHo=25/09/40 11:50:47 م24/09/40 10:51:32 م</TimeStamp>
+      <ID>
+        <String>MoviesDB</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2019-06-07T16:42:40.08Z</LastDeployed>
+</DeploymentSnapshot>

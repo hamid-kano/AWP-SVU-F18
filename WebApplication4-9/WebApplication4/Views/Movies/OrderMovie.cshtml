@@ -1,0 +1,78 @@
+﻿@model WebApplication4.Models.Movie
+
+@{
+    /**/
+
+    ViewBag.Title = "OrderMovie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>OrderMovie</h2>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    @using (Html.BeginForm("Download", "Movies", new { MovieName=Model.LinkDownload ,MovieId=Model.ID}))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="UserName">UserName</label>
+            <div class="col-md-10">
+                <input class="form-control" data-val="true" data-val-required="الحقل UserName مطلوب." id="UserName" name="UserName" type="text" value="" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="Credit_ID">Credit_ID</label>
+            <div class="col-md-10">
+                <input class="form-control" data-val="true" data-val-number="The field Credit_ID must be a number." data-val-required="الحقل Credit_ID مطلوب." id="Credit_ID" name="Credit_ID" type="text" value="" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="Email">Email</label>
+            <div class="col-md-10">
+                <input class="form-control" data-val="true" data-val-email="الحقل Email ليس عنوان بريد إلكتروني صالحًا." data-val-required="الحقل Email مطلوب." id="Email" name="Email" type="text" value="" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="Password">Password</label>
+            <div class="col-md-10">
+                <input class="form-control" data-val="true" data-val-length="The Password must be at least 6 characters long." data-val-length-max="100" data-val-length-min="6" data-val-required="الحقل Password مطلوب." id="Password" name="Password" type="password" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+     @*           @Html.ActionLink("Download", "Download", new { MovieName = Model.LinkDownload ,onsubmit="return SubmitValidation()" })*@
+                <input type="submit" onclick="return SubmitValidation()"  class="btn btn-success" value="Download" />
+            </div>
+        </div>
+
+    }
+
+    </div>
+
+<script>
+    function SubmitValidation() {
+        if ($("#UserName").val() != "@ViewBag.UserName") {
+            alert("User Name is incorrect.");
+            return false;
+        }
+             if ($("#Credit_ID").val() != "@ViewBag.Credit_ID") {
+            alert("Credit ID is incorrect.");
+            return false;
+             }
+                     if ($("#Email").val() != "@ViewBag.Email") {
+            alert("Email is incorrect.");
+            return false;
+                     }
+                     if ($("#Password").val() != "@ViewBag.Password") {
+            alert("Password is incorrect.");
+            return false;
+        }
+
+        else {
+            return true;
+        }
+    }
+</script>

@@ -1,0 +1,169 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="1ea1e9fe-4afe-42bd-b2b5-56d3d3f43545" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>MovieDMDSV</ID>
+  <Name>MovieDMDSV</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:NameMatchingCriteria</Name>
+      <Value>1</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>MovieDMDS</DataSourceID>
+  <Schema>
+    <xs:schema id="MovieDMDSV" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="MovieDMDSV" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="24d3fced-7b4d-4667-9641-fa964cb74a65">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_Customers" msprop:design-time-name="573be276-7d5e-4f0f-95b5-55909a029db9" msprop:DbTableName="Customers" msprop:FriendlyName="Customers" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Age" msprop:design-time-name="d8a02365-90e4-495a-bb7a-22f0c1854594" msprop:DbColumnName="Age" msprop:FriendlyName="Age" type="xs:int" minOccurs="0" />
+                  <xs:element name="Education_x0020_Level" msprop:design-time-name="22fb546e-a272-456b-ad6a-db8a7e66ae10" msprop:DbColumnName="Education Level" msprop:FriendlyName="Education Level" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Gender" msprop:design-time-name="b36fba38-4d75-4e51-aaa1-3f45033260aa" msprop:DbColumnName="Gender" msprop:FriendlyName="Gender" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Home_x0020_Ownership" msprop:design-time-name="0b56562f-fa6f-44b0-ab01-1541d5295f16" msprop:DbColumnName="Home Ownership" msprop:FriendlyName="Home Ownership" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="5" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Internet_x0020_Connection" msprop:design-time-name="2332d469-e2cd-46f3-a0d4-4c66e4e48f2c" msprop:DbColumnName="Internet Connection" msprop:FriendlyName="Internet Connection" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Marital_x0020_Status" msprop:design-time-name="5a1f6035-e131-40fc-b760-e98d1e1b31ae" msprop:DbColumnName="Marital Status" msprop:FriendlyName="Marital Status" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Movie_x0020_Selector" msprop:design-time-name="aadd3a62-59a2-444d-8f45-2dc111898739" msprop:DbColumnName="Movie Selector" msprop:FriendlyName="Movie Selector" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Num_x0020_Bathrooms" msprop:design-time-name="fa938c20-80e6-4d88-ab47-0edc4ae14885" msprop:DbColumnName="Num Bathrooms" msprop:FriendlyName="Num Bathrooms" type="xs:float" minOccurs="0" />
+                  <xs:element name="Num_x0020_Bedrooms" msprop:design-time-name="7cb250bb-fe78-4c05-83e1-29a04174fa4e" msprop:DbColumnName="Num Bedrooms" msprop:FriendlyName="Num Bedrooms" type="xs:int" minOccurs="0" />
+                  <xs:element name="Num_x0020_Cars" msprop:design-time-name="8baa9dce-0643-4694-8181-abba28b35731" msprop:DbColumnName="Num Cars" msprop:FriendlyName="Num Cars" type="xs:int" minOccurs="0" />
+                  <xs:element name="Num_x0020_Children" msprop:design-time-name="2b633ff0-1940-4480-903c-cc72a3376b97" msprop:DbColumnName="Num Children" msprop:FriendlyName="Num Children" type="xs:int" minOccurs="0" />
+                  <xs:element name="Num_x0020_TVs" msprop:design-time-name="56ff52db-ebbd-4d57-b0db-acf35536729f" msprop:DbColumnName="Num TVs" msprop:FriendlyName="Num TVs" type="xs:int" minOccurs="0" />
+                  <xs:element name="PPV_x0020_Freq" msprop:design-time-name="fefafcbb-67df-4755-8f3d-f5b582b0cb54" msprop:DbColumnName="PPV Freq" msprop:FriendlyName="PPV Freq" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Buying_x0020_Freq" msprop:design-time-name="c96ee9a1-553d-4b6b-93a3-e30020a0c99a" msprop:DbColumnName="Buying Freq" msprop:FriendlyName="Buying Freq" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Format" msprop:design-time-name="5b31be0e-0ec8-4b8c-82c0-2e9ced58f433" msprop:DbColumnName="Format" msprop:FriendlyName="Format" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Renting_x0020_Freq" msprop:design-time-name="77eb76f2-e93a-4f0d-91cc-2ea9b3aa4500" msprop:DbColumnName="Renting Freq" msprop:FriendlyName="Renting Freq" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Viewing_x0020_Freq" msprop:design-time-name="a9aaa1fe-8ab3-4e00-b308-69b3cee417b3" msprop:DbColumnName="Viewing Freq" msprop:FriendlyName="Viewing Freq" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CustomerID" msprop:design-time-name="8bf850b1-7434-4496-a2eb-8fe02fa36afe" msprop:DbColumnName="CustomerID" msprop:FriendlyName="CustomerID" type="xs:int" />
+                  <xs:element name="Theater_x0020_Freq" msprop:design-time-name="4bbd47fe-a288-49ac-8290-aaebf34c542d" msprop:DbColumnName="Theater Freq" msprop:FriendlyName="Theater Freq" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TV_x0020_Movie_x0020_Freq" msprop:design-time-name="ecb975e9-567e-4cb3-9d54-4ab1906d308b" msprop:DbColumnName="TV Movie Freq" msprop:FriendlyName="TV Movie Freq" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TV_x0020_Signal" msprop:design-time-name="9b81f603-52af-4a21-b0b7-287411c24f99" msprop:DbColumnName="TV Signal" msprop:FriendlyName="TV Signal" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <MovieDMDSV xmlns="" />
+  </Schema>
+</DataSourceView>
